@@ -4,5 +4,13 @@
   "stubPath": "typings",
   "venvPath": ".",
   "venv": ".venv",
-  "reportMissingModuleSource": "none"
+  "pythonVersion": "3.11",
+  "reportMissingModuleSource": "none",
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "pythonVersion": "3.11",
+      "extraPaths": [".venv/lib/python3.11/site-packages"]
+    }
+  ]
 }
