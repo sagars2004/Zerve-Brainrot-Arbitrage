@@ -1,0 +1,8 @@
+{
+  "include": ["."],
+  "exclude": [".venv", "_deps"],
+  "stubPath": "typings",
+  "venvPath": ".",
+  "venv": ".venv",
+  "reportMissingModuleSource": "none"
+}
