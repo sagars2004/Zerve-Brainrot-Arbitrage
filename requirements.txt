@@ -2,3 +2,4 @@ python-dotenv>=1.0.0
 pandas>=2.0.0
 requests>=2.31.0
 pytrends>=4.9.2
+plotly>=5.15.0
