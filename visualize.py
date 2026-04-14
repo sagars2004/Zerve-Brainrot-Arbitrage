@@ -393,8 +393,11 @@ def _build_fig_signal_stack(plot_df: pd.DataFrame) -> go.Figure:
     return fig
 
 
-def _build_fig_lag_panel(lag_df: pd.DataFrame | None) -> go.Figure:
-    lr = _get_lag_results()
+def _build_fig_lag_panel(
+    lag_df: pd.DataFrame | None,
+    lag_results_df: pd.DataFrame | None = None,
+) -> go.Figure:
+    lr = lag_results_df if lag_results_df is not None else _get_lag_results()
 
     subplot_titles: list[str] = []
     for pair_key, short_title in LAG_PAIRS:
@@ -519,7 +522,7 @@ def _build_fig_lag_panel(lag_df: pd.DataFrame | None) -> go.Figure:
 def _build_figures(plot_df: pd.DataFrame) -> tuple[go.Figure, go.Figure, go.Figure]:
     fig_brainrot = _build_fig_brainrot(plot_df)
     fig_amzn_overlay = _build_fig_signal_stack(plot_df)
-    fig_lag_h3 = _build_fig_lag_panel(_get_lag_series())
+    fig_lag_h3 = _build_fig_lag_panel(_get_lag_series(), _get_lag_results())
     return fig_brainrot, fig_amzn_overlay, fig_lag_h3
 
 
